@@ -1,0 +1,339 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 2,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "4wh0c3F4z"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "from": 400,
+                "result": {
+                  "index": 0,
+                  "text": "OFF"
+                },
+                "to": 10000
+              },
+              "type": "range"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-green",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 10
+              },
+              {
+                "color": "yellow",
+                "value": 201
+              },
+              {
+                "color": "orange",
+                "value": 250
+              },
+              {
+                "color": "red",
+                "value": 400
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "176.105.205.91"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Піщане"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "192.168.1.1"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Кременчук"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "192.168.2.1"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Київ, Мілютенка"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "192.168.4.1"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Андрусівка"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "{url=\"http://kyiv-metr.keenetic.pro/\"}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Київ, Метрологічна"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 6,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.3.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "JZgFeBK4k"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "ping_time_host",
+          "format": "heatmap",
+          "instant": true,
+          "legendFormat": "{{ping_host}}",
+          "range": false,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "JZgFeBK4k"
+          },
+          "editorMode": "code",
+          "expr": "sum by (url) (responce_from_url{url=\"http://kyiv-metr.keenetic.pro/\"})\n",
+          "hide": true,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "B"
+        }
+      ],
+      "title": "Hosts state",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "4wh0c3F4z"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "from": 300,
+                "result": {
+                  "color": "red",
+                  "index": 0
+                },
+                "to": 600
+              },
+              "type": "range"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "176.105.205.91"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Піщане"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "192.168.1.1"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Кременчук"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "192.168.2.1"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Київ, Мілютенка"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "192.168.4.1"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "Андрусівка"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 7,
+        "x": 6,
+        "y": 0
+      },
+      "id": 5,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.3.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "JZgFeBK4k"
+          },
+          "editorMode": "code",
+          "exemplar": false,
+          "expr": "responce_from_url",
+          "format": "heatmap",
+          "instant": true,
+          "legendFormat": "{{url}}",
+          "range": false,
+          "refId": "A"
+        }
+      ],
+      "title": "URL state",
+      "type": "stat"
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 37,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Pingator",
+  "uid": "kSh9keFVk",
+  "version": 7,
+  "weekStart": ""
+}
